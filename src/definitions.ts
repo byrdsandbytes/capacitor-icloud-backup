@@ -6,4 +6,5 @@ declare module "@capacitor/core" {
 
 export interface CapIcloudBackupPlugin {
   echo(options: { value: string }): Promise<{value: string}>;
+  skipBackupForUrl(options: { urlString: string }): Promise<{success: boolean}>;
 }

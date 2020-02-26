@@ -13,6 +13,13 @@ export class CapIcloudBackupWeb extends WebPlugin implements CapIcloudBackupPlug
     console.log('ECHO', options);
     return options;
   }
+
+  async skipBackupForUrl(options: { urlString: string }): Promise<any> {
+    console.log('ECHO', options);
+    return options;
+  }
+
+
 }
 
 const CapIcloudBackup = new CapIcloudBackupWeb();

@@ -14,4 +14,20 @@ public class CapIcloudBackup: CAPPlugin {
             "value": value
         ])
     }
+    
+    @objc func skipBackupForUrl(_ call: CAPPluginCall) {
+        let urlString = call.getString("urlString") ?? ""
+        let succes = SkipBackup.addSkipBackupAttributeToItemAtURL(filePath: urlString)
+        switch succes {
+        case true:
+            call.success([
+                "success": true
+            ])
+        default:
+            call.success([
+                "succes": true
+            ])
+        }
+        
+    }
 }
