@@ -1,5 +1,5 @@
 {
-  "name": "capacitor-icloud-backup",
+  "name": "@byrds/capacitor-icloud-backup",
   "version": "0.0.1",
   "description": "A plugin to  exclude a File from Backups on iOS 5.1 and later (Swift)",
   "main": "dist/esm/index.js",
