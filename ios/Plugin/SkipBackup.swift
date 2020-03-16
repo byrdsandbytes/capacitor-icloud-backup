@@ -12,9 +12,9 @@ class SkipBackup{
     
     class func addSkipBackupAttributeToItemAtURL(filePath:String) -> Bool
        {
-        let URL:NSURL = NSURL.fileURL(withPath: filePath) as NSURL
+        let URL:NSURL = NSURL.init(string: filePath)!
 
-        assert(FileManager.default.fileExists(atPath: filePath), "File \(filePath) does not exist")
+        assert(FileManager.default.fileExists(atPath: URL.path!), "File \(URL.path!) does not exist")
 
            var success: Bool
            do {
@@ -22,7 +22,7 @@ class SkipBackup{
                success = true
            } catch let error as NSError {
                success = false
-               print("Error excluding \(URL.lastPathComponent) from backup \(error)");
+            print("Error excluding \(URL.path!) from backup description: \(error.description) code: \(error.code)");
            }
         return success
     }
